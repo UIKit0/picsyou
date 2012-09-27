@@ -47,15 +47,35 @@
     UIImage *coinImage = self.coinImage;
     CGSize size = self.imageView.bounds.size;
     CGRect drawRect = CGRectMake(0.0f, 0.0f, size.width, size.height);
+    CGFloat margin = 11.0f;
 
     // Create an image that has transparency and uses the current device's scale
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
 
+    // Draw the shadow at the bottom of the coin
+    // The context scaling is an advanced technique, comment the block if it bothers you
+    {
+        CGFloat shadowMargin = 10.0f;
+        CGFloat scale = 1.0f - 2.0f * shadowMargin / size.width;
+
+        // Add margins to the context to make sure we do not draw the shadow outside of it
+        CGContextTranslateCTM(UIGraphicsGetCurrentContext(), shadowMargin, shadowMargin);
+        CGContextScaleCTM(UIGraphicsGetCurrentContext(), scale, scale);
+        CGContextSaveGState(UIGraphicsGetCurrentContext());
+        CGContextSetShadowWithColor(UIGraphicsGetCurrentContext(), CGSizeMake(2.0f, 3.0f), 7.0f, [[UIColor blackColor] CGColor]);
+
+        // The coin does not quite get to the border of the context,
+        // add a pixel of margin to avoid drawin a black border
+        [[UIBezierPath bezierPathWithOvalInRect:CGRectInset(drawRect, 1.0f, 1.0f)] fill];
+
+        CGContextRestoreGState(UIGraphicsGetCurrentContext());
+    }
+
     // Draw the coin as the background
     [coinImage drawInRect:drawRect];
 
-    // Draw the face centered within the coin, with 11px borders on each side.
-    drawRect = CGRectInset(drawRect, 11.0f, 11.0f);
+    // Draw the face centered within the coin, with a margin on each side.
+    drawRect = CGRectInset(drawRect, margin, margin);
 
     // Set the mask to remove parts of the face that are outside the coin's center
     {
