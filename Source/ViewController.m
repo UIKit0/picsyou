@@ -8,9 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (strong, nonatomic) UIImage *coinImage;
 
 - (IBAction)takePicture;
@@ -37,10 +38,29 @@
 
     // Use a classy pattern for the background, see http://iphonedevwiki.net/index.php/UIColor
     self.view.backgroundColor = [UIColor performSelector:@selector(noContentLightGradientBackgroundColor)];
+
+    // Remove the camera button if the device does not have a camera
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        self.navigationBar.topItem.rightBarButtonItem = nil;
+    }
 }
 
 - (IBAction)takePicture {
-    NSLog(@"I should take a picture");
+    UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
+
+    pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    pickerController.allowsEditing = YES;
+    pickerController.delegate = self;
+    [self presentViewController:pickerController animated:YES completion:^{}];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
+    [self processImage:image];
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)processImage:(UIImage *)image {
