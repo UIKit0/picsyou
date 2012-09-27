@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 teapot apps. All rights reserved.
 //
 
+#import <Twitter/Twitter.h>
+
 #import "ViewController.h"
 
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -15,6 +17,7 @@
 @property (strong, nonatomic) UIImage *coinImage;
 
 - (IBAction)takePicture;
+- (IBAction)tweet;
 - (void)processImage:(UIImage *)image;
 
 @end
@@ -52,6 +55,14 @@
     pickerController.allowsEditing = YES;
     pickerController.delegate = self;
     [self presentViewController:pickerController animated:YES completion:^{}];
+}
+
+- (IBAction)tweet {
+    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+
+    [tweetViewController setInitialText:@"My Taylor Is Rich!"];
+    [tweetViewController addImage:self.imageView.image];
+    [self presentViewController:tweetViewController animated:YES completion:^{}];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {

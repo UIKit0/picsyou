@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B69A63B81614A8F5000E6D3D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69A63B71614A8F5000E6D3D /* Twitter.framework */; };
 		B6A46AE11614714700808274 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A46AE01614714700808274 /* UIKit.framework */; };
 		B6A46AE31614714700808274 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A46AE21614714700808274 /* Foundation.framework */; };
 		B6A46AE51614714700808274 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A46AE41614714700808274 /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B69A63B71614A8F5000E6D3D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		B6A46ADC1614714700808274 /* Picsyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picsyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A46AE01614714700808274 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B6A46AE21614714700808274 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69A63B81614A8F5000E6D3D /* Twitter.framework in Frameworks */,
 				B6A46AE11614714700808274 /* UIKit.framework in Frameworks */,
 				B6A46AE31614714700808274 /* Foundation.framework in Frameworks */,
 				B6A46AE51614714700808274 /* CoreGraphics.framework in Frameworks */,
@@ -79,6 +82,7 @@
 				B6A46AE01614714700808274 /* UIKit.framework */,
 				B6A46AE21614714700808274 /* Foundation.framework */,
 				B6A46AE41614714700808274 /* CoreGraphics.framework */,
+				B69A63B71614A8F5000E6D3D /* Twitter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
