@@ -60,7 +60,7 @@
     // Set the mask to remove parts of the face that are outside the coin's center
     {
         UIImage *circleMaskImage = nil;
-        CGRect maskDrawRect = {{0.0f, 0.0f}, drawRect.size};
+        CGRect maskDrawRect = CGRectMake(0, 0, drawRect.size.width, drawRect.size.height);
 
         // We need to create an image that will act as a mask
         // Every white pixel within this image will be "pass-through"
@@ -75,6 +75,21 @@
 
         // Apply the mask image to the coin graphics context
         CGContextClipToMask(UIGraphicsGetCurrentContext(), drawRect, circleMaskImage.CGImage);
+    }
+
+    // Make the face image black and white to get the nice blending effect
+    {
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+        CGContextRef context = CGBitmapContextCreate(NULL, image.size.width, image.size.height, 8, 0, colorSpace, kCGImageAlphaNone);
+        CGRect imageDrawRect = CGRectMake(0, 0, image.size.width, image.size.height);
+
+        // Draw the image in a black and white context to make it gray scale
+        CGContextDrawImage(context, imageDrawRect, image.CGImage);
+        image = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+
+        // Clean up the context
+        CGColorSpaceRelease(colorSpace);
+        CGContextRelease(context);
     }
 
     // Draw the face in the mask, use the multiply blend mode to mix the images
