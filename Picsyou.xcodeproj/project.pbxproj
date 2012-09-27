@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B69A63B81614A8F5000E6D3D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69A63B71614A8F5000E6D3D /* Twitter.framework */; };
+		B69A63BF1614B2C7000E6D3D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B69A63BD1614B2C7000E6D3D /* Icon.png */; };
+		B69A63C01614B2C7000E6D3D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B69A63BE1614B2C7000E6D3D /* Icon@2x.png */; };
 		B6A46AE11614714700808274 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A46AE01614714700808274 /* UIKit.framework */; };
 		B6A46AE31614714700808274 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A46AE21614714700808274 /* Foundation.framework */; };
 		B6A46AE51614714700808274 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A46AE41614714700808274 /* CoreGraphics.framework */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		B69A63B71614A8F5000E6D3D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		B69A63BD1614B2C7000E6D3D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B69A63BE1614B2C7000E6D3D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		B6A46ADC1614714700808274 /* Picsyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picsyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A46AE01614714700808274 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B6A46AE21614714700808274 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +99,8 @@
 				B6A46B031614724400808274 /* Default-568h@2x.png */,
 				B6A46B041614724400808274 /* Default.png */,
 				B6A46B051614724400808274 /* Default@2x.png */,
+				B69A63BD1614B2C7000E6D3D /* Icon.png */,
+				B69A63BE1614B2C7000E6D3D /* Icon@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 				B6A46B131614724400808274 /* Coin.jpg in Resources */,
 				B6A46B161614724400808274 /* Fred.jpg in Resources */,
 				B6A46B1E161472B600808274 /* ViewController.xib in Resources */,
+				B69A63BF1614B2C7000E6D3D /* Icon.png in Resources */,
+				B69A63C01614B2C7000E6D3D /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +231,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -246,7 +254,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
