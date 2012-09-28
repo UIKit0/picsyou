@@ -36,7 +36,6 @@
 		B6A46B041614724400808274 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B6A46B051614724400808274 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B6A46B071614724400808274 /* Coin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Coin.jpg; sourceTree = "<group>"; };
-		B6A46B091614724400808274 /* Coin.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coin.psd; sourceTree = "<group>"; };
 		B6A46B0A1614724400808274 /* Fred.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Fred.jpg; sourceTree = "<group>"; };
 		B6A46B0B1614724400808274 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A46B0D1614724400808274 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,7 +109,6 @@
 			children = (
 				B6A46B071614724400808274 /* Coin.jpg */,
 				B6A46B0A1614724400808274 /* Fred.jpg */,
-				B6A46B091614724400808274 /* Coin.psd */,
 			);
 			path = Images;
 			sourceTree = "<group>";
