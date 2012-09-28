@@ -105,28 +105,11 @@
     // Draw the coin as the background
     [coinImage drawInRect:drawRect];
 
-    // Draw the face centered within the coin, with a margin on each side.
+    // Draw the face centered within the coin, with a margin on each side
     drawRect = CGRectInset(drawRect, margin, margin);
 
-    // Set the mask to remove parts of the face that are outside the coin's center
-    {
-        UIImage *circleMaskImage = nil;
-        CGRect maskDrawRect = CGRectMake(0, 0, drawRect.size.width, drawRect.size.height);
-
-        // We need to create an image that will act as a mask
-        // Every white pixel within this image will be "pass-through"
-        UIGraphicsBeginImageContextWithOptions(maskDrawRect.size, YES, 0.0);
-
-        // Draw the oval mask shape with a white color
-        [[UIColor whiteColor] setFill];
-        [[UIBezierPath bezierPathWithOvalInRect:maskDrawRect] fill];
-
-        circleMaskImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-
-        // Apply the mask image to the coin graphics context
-        CGContextClipToMask(UIGraphicsGetCurrentContext(), drawRect, circleMaskImage.CGImage);
-    }
+    // Clip to a circle Set the mask to remove parts of the face that are outside the coin's center
+    [[UIBezierPath bezierPathWithOvalInRect:drawRect] addClip];
 
     // Make the face image black and white to get the nice blending effect
     {
@@ -143,7 +126,7 @@
         CGContextRelease(context);
     }
 
-    // Draw the face in the mask, use the multiply blend mode to mix the images
+    // Draw the face in the clipped context, use the multiply blend mode to mix the images
     [image drawInRect:drawRect blendMode:kCGBlendModeMultiply alpha:1.0f];
 
     // Get the generated image and clean up the context
