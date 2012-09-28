@@ -136,11 +136,13 @@
 
         // Draw the image in a black and white context to make it gray scale
         CGContextDrawImage(context, imageDrawRect, image.CGImage);
-        image = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+        CGImageRef cgImage = CGBitmapContextCreateImage(context);
+        image = [UIImage imageWithCGImage:cgImage];
 
         // Clean up the context
         CGColorSpaceRelease(colorSpace);
         CGContextRelease(context);
+        CGImageRelease(cgImage);
     }
 
     // Draw the face in the clipped context, use the multiply blend mode to mix the images
