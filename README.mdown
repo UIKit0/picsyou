@@ -8,7 +8,7 @@ Show up on top of the food chain by tweeting your very own money.
 ![App Screenshot](https://raw.github.com/ndfred/picsyou/master/Resources/Default.png)
 
 A simple app to demonstrate how Core Graphics can be used on the iPhone to reproduce Photoshop-like workflows.
-You can open the Photoshop file to see what effect we are trying to reproduce, and read the source code to see how it works.
+You can open [the Photoshop file](https://github.com/ndfred/picsyou/raw/master/Artwork/Coin.psd) to see what effect we are trying to reproduce, and [read the source](https://github.com/ndfred/picsyou/blob/master/Source/ViewController.m#L94) code to see how it works.
 The demo was presented at the [Lyon Cocoaheads](http://cocoaheads.fr/2012/09/lyon-session-du-27-septembre-2012/) on September 27, 2012.
 
 Feel free to send me a pull request if you want to improve the demo.
