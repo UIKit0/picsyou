@@ -14,7 +14,7 @@ Show up on top of the food chain by tweeting your very own money.
 <p align="center">
 <a href="http://twitter.com/_nb/status/251597691769987072/photo/1"><img alt="@_nb" src="http://pbs.twimg.com/media/A33axISCIAAlQQF.jpg" width="256px" height="256px"></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://twitter.com/_nb/status/251597691769987072/photo/1"><img alt="@ndfred" src="http://pbs.twimg.com/media/A33ViemCEAAPi2F.jpg" width="256px" height="256px"></a>
+<a href="http://twitter.com/ndfred/status/251591942503272448/photo/1"><img alt="@ndfred" src="http://pbs.twimg.com/media/A33ViemCEAAPi2F.jpg" width="256px" height="256px"></a>
 </p>
 
 A simple app to demonstrate how Core Graphics can be used on the iPhone to reproduce Photoshop-like workflows.
