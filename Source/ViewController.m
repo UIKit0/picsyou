@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 teapot apps. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import <Twitter/Twitter.h>
 
 #import "ViewController.h"
@@ -29,18 +30,34 @@
 
     // We use a JPG image to reduce file size, but still want a transparent background
     // Create a coin image with a transparent background by removing the white parts of the image
-    // A pixel is considered white if all its red, green and blue components are between 230 and 255 in value
-    UIImage *coinImage = [UIImage imageNamed:@"Coin.jpg"];
-    CGImageRef coinImageWithTransparentBackground = CGImageCreateWithMaskingColors(coinImage.CGImage, (const CGFloat[]){230.0, 255.0, 230.0, 255.0, 230.0, 255.0});
+    {
+        // A pixel is considered white if all its red, green and blue components are between 230 and 255 in value
+        UIImage *coinImage = [UIImage imageNamed:@"Coin.jpg"];
+        CGImageRef coinImageWithTransparentBackground = CGImageCreateWithMaskingColors(coinImage.CGImage, (const CGFloat[]){230.0, 255.0, 230.0, 255.0, 230.0, 255.0});
 
-    self.coinImage = [UIImage imageWithCGImage:coinImageWithTransparentBackground];
-    CGImageRelease(coinImageWithTransparentBackground);
+        self.coinImage = [UIImage imageWithCGImage:coinImageWithTransparentBackground];
+        CGImageRelease(coinImageWithTransparentBackground);
+    }
 
     // Show a default image when loading the app
     [self processImage:[UIImage imageNamed:@"Fred.jpg"]];
 
-    // Use a classy pattern for the background, see http://iphonedevwiki.net/index.php/UIColor
-    self.view.backgroundColor = [UIColor performSelector:@selector(noContentLightGradientBackgroundColor)];
+    // Use a classy gradient image for the background
+    {
+        NSArray *colors = @[(__bridge id)[[UIColor whiteColor] CGColor], (__bridge id)[[UIColor colorWithWhite:0.8f alpha:1.0f] CGColor]];
+        CGGradientRef gradient = CGGradientCreateWithColors(NULL, (__bridge CFArrayRef)colors, (CGFloat[]){0.0f, 1.0f});
+        CGSize size = self.view.bounds.size;
+
+        UIGraphicsBeginImageContextWithOptions(size, YES, 0.0);
+
+        // Origin is top left, draw the gradient from top to bottom
+        CGContextDrawLinearGradient(UIGraphicsGetCurrentContext(), gradient, CGPointMake(0.0f, 0.0f), CGPointMake(0.0f, size.height), 0);
+        CGGradientRelease(gradient);
+
+        // Set the image as the background view's layer
+        self.view.layer.contents = (__bridge id)[UIGraphicsGetImageFromCurrentImageContext() CGImage];
+        UIGraphicsEndImageContext();
+    }
 
     // Remove the camera button if the device does not have a camera
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
