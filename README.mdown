@@ -5,7 +5,7 @@ Think Big And Kick Ass!
 Start by getting your very own coins with this very powerful iPhone app that puts your head on a gold coin.
 Show up on top of the food chain by tweeting your very own money.
 
-![App Screenshot](http://raw.github.com/ndfred/picsyou/master/Resources/Default.png)
+![App Screenshot](https://raw.github.com/ndfred/picsyou/master/Resources/Default.png)
 
 A simple app to demonstrate how Core Graphics can be used on the iPhone to reproduce Photoshop-like workflows.
 You can open the Photoshop file to see what effect we are trying to reproduce, and read the source code to see how it works.
