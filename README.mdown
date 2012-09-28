@@ -5,8 +5,9 @@ Think Big And Kick Ass!
 Start by getting your very own coins with this very powerful iPhone app that puts your head on a gold coin.
 Show up on top of the food chain by tweeting your very own money.
 
-<p>
+<p align="center">
 <img alt="App Screenshot" src="https://raw.github.com/ndfred/picsyou/master/Artwork/Home.png" width="320px" height="480px">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img alt="App Screenshot" src="https://raw.github.com/ndfred/picsyou/master/Artwork/Tweet.png" width="320px" height="480px">
 </p>
 
